@@ -1,0 +1,53 @@
+<h2 id='add-assistants'>Add assistants</h2>
+<p>Add assistants to a user</p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v2/users/<span class="o">{</span>userId<span class="o">}</span>/assistants
+</code></pre></div>
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.zoom.us/v2/users/<span class="o">{</span>userId<span class="o">}</span>/assistants <span class="se">\</span>
+   <span class="nt">-d</span> <span class="s1">'{
+    "assistants": [
+        {
+            "id": "string",
+            "email": "string"
+        }
+    ]
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>201 Created
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"ids"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"add_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string [date-time]"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Path Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId <strong>required</strong></td>
+<td>The user ID or email address</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Body Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assistants <em>optional</em><div class="maximum">30</div></td>
+<td>List of User&#39;s assistants</td>
+</tr>
+</tbody></table>

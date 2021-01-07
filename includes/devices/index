@@ -1,0 +1,32 @@
+<h1 id='devices'>Devices</h1><h2 id='the-device-object'>The Device object</h2>
+<p>The H.323/SIP device object.</p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"protocol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"encryption"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name <em>string</em></td>
+<td>Device name</td>
+</tr>
+<tr>
+<td>protocol <em>string</em></td>
+<td>Device protocol<div class="enum"><code>H.323</code> H.323<br/><code>SIP</code> SIP<br/></div></td>
+</tr>
+<tr>
+<td>ip <em>string</em></td>
+<td>Device Ip</td>
+</tr>
+<tr>
+<td>encryption <em>string</em></td>
+<td>Device encryption<div class="enum"><code>auto</code> auto<br/><code>yes</code> yes<br/><code>no</code> no<br/></div></td>
+</tr>
+</tbody></table>

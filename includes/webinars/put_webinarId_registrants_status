@@ -1,0 +1,66 @@
+<h2 id='update-a-webinar-registrant-39-s-status'>Update a webinar registrant&#39;s status</h2>
+<p>Update a webinar registrant&#39;s status</p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>PUT https://api.zoom.us/v2/webinars/<span class="o">{</span>webinarId<span class="o">}</span>/registrants/status
+</code></pre></div>
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.zoom.us/v2/webinars/<span class="o">{</span>webinarId<span class="o">}</span>/registrants/status <span class="se">\</span>
+   <span class="nt">-d</span> <span class="s1">'{
+    "action": "string",
+    "registrants": [
+        {
+            "id": "string",
+            "email": "string"
+        }
+    ]
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>204 No Content
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Path Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>webinarId <strong>required</strong></td>
+<td>The webinar ID</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Query Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>occurrence_id <em>optional</em></td>
+<td>The meeting occurrence ID</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Body Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>action <strong>required</strong></td>
+<td><div class="enum"><code>approve</code> Approve registrant<br/><code>cancel</code> Cancel registrant<br/><code>deny</code> Deny registrant<br/></div></td>
+</tr>
+<tr>
+<td>registrants <em>optional</em><div class="maximum">30</div></td>
+<td>List of registrants</td>
+</tr>
+</tbody></table>

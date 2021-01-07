@@ -1,0 +1,34 @@
+<h1 id='webhooks'>Webhooks</h1><h2 id='the-webhook-object'>The Webhook object</h2>
+<p>Webhook base object, only available for version 2 webhook</p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"auth_user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"auth_password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>url <em>string</em></td>
+<td>Webhook endpoint</td>
+</tr>
+<tr>
+<td>auth_user <em>string</em></td>
+<td>Webhook auth user name</td>
+</tr>
+<tr>
+<td>auth_password <em>string</em></td>
+<td>Webhook auth password</td>
+</tr>
+<tr>
+<td>events <em>array</em></td>
+<td>List of events objects.<div class="enum"><code>meeting_started</code> The meeting has started.<br/><code>meeting_ended</code> The meeting has ended.<br/><code>meeting_jbh</code> Attendee has joined a meeting before the host.<br/><code>meeting_join</code> Host hasn’t launched the meeting, attendee is waiting.<br/><code>recording_completed</code> All the Cloud Recordings have completed processing and is available.<br/><code>participant_joined</code> Participant has joined the meeting.<br/><code>participant_left</code> Participant has leaved the meeting.<br/><code>meeting_registered</code> Attendee registered for a meeting or webinar.<br/><code>recording_transcript_completed</code> Recording audio transcript files have processed and are available.<br/></div></td>
+</tr>
+</tbody></table>

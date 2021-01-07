@@ -1,0 +1,62 @@
+<h1 id='users'>Users</h1><h2 id='the-user-object'>The User object</h2>
+<p>The user object represents a User on Zoom</p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pmi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dept"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string [date-time]"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_login_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string [date-time]"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_client_version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>first_name <em>string</em></td>
+<td>User&#39;s first name</td>
+</tr>
+<tr>
+<td>last_name <em>string</em></td>
+<td>User&#39;s last name</td>
+</tr>
+<tr>
+<td>email <em>string</em></td>
+<td>User&#39;s email address</td>
+</tr>
+<tr>
+<td>type <em>integer</em></td>
+<td>User&#39;s type<div class="enum"><code>1</code> basic<br/><code>2</code> pro<br/><code>3</code> corp<br/></div></td>
+</tr>
+<tr>
+<td>pmi <em>string</em></td>
+<td>Personal Meeting ID</td>
+</tr>
+<tr>
+<td>timezone <em>string</em></td>
+<td>Time Zone</td>
+</tr>
+<tr>
+<td>dept <em>string</em></td>
+<td>Department</td>
+</tr>
+<tr>
+<td>created_at <em>string</em></td>
+<td>User create time</td>
+</tr>
+<tr>
+<td>last_login_time <em>string</em></td>
+<td>User last login time</td>
+</tr>
+<tr>
+<td>last_client_version <em>string</em></td>
+<td>User last login client version</td>
+</tr>
+</tbody></table>

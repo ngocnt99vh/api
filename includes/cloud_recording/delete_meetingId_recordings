@@ -1,0 +1,42 @@
+<h2 id='delete-a-meeting-39-s-recordings'>Delete a meeting&#39;s recordings</h2>
+<p>Delete a meeting&#39;s recordings</p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>DELETE https://api.zoom.us/v2/meetings/<span class="o">{</span>meetingId<span class="o">}</span>/recordings
+</code></pre></div>
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.zoom.us/v2/meetings/<span class="o">{</span>meetingId<span class="o">}</span>/recordings <span class="se">\</span>
+    <span class="nt">-X</span> DELETE
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>204 No Content
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Path Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>meetingId <strong>required</strong></td>
+<td>The meeting ID or meeting UUID. If given meeting ID, will take the last meeting instance.</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Query Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>action <em>optional</em><div class="default">trash</div></td>
+<td>The recording delete action<div class="enum"><code>trash</code> move recording to trash<br/><code>delete</code> delete recording permanently<br/></div></td>
+</tr>
+</tbody></table>

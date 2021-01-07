@@ -1,0 +1,492 @@
+<h2 id='update-a-sub-account-39-s-settings'>Update a sub account&#39;s settings</h2>
+<p>Update a sub account&#39;s settings under the master account</p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>PATCH https://api.zoom.us/v2/accounts/<span class="o">{</span>accountId<span class="o">}</span>/settings
+</code></pre></div>
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.zoom.us/v2/accounts/<span class="o">{</span>accountId<span class="o">}</span>/settings <span class="se">\</span>
+   <span class="nt">-d</span> <span class="s1">'{
+    "schedule_meting": {
+        "host_video": "boolean",
+        "participant_video": "boolean",
+        "audio_type": "string",
+        "join_before_host": "boolean",
+        "enforce_login": "boolean",
+        "enforce_login_with_domains": "boolean",
+        "enforce_login_domains": "string",
+        "not_store_meeting_topic": "boolean",
+        "force_pmi_jbh_password": "boolean"
+    },
+    "in_meeting": {
+        "e2e_encryption": "boolean",
+        "chat": "boolean",
+        "private_chat": "boolean",
+        "auto_saving_chat": "boolean",
+        "file_transfer": "boolean",
+        "feedback": "boolean",
+        "post_meeting_feedback": "boolean",
+        "co_host": "boolean",
+        "polling": "boolean",
+        "attendee_on_hold": "boolean",
+        "show_meeting_control_toolbar": "boolean",
+        "allow_show_zoom_windows": "boolean",
+        "annotation": "boolean",
+        "whiteboard": "boolean",
+        "webinar_question_answer": "boolean",
+        "anonymous_question_answer": "boolean",
+        "breakout_room": "boolean",
+        "closed_caption": "boolean",
+        "far_end_camera_control": "boolean",
+        "group_hd": "boolean",
+        "virtual_background": "boolean",
+        "watermark": "boolean",
+        "alert_guest_join": "boolean",
+        "auto_answer": "boolean",
+        "p2p_connetion": "boolean",
+        "p2p_ports": "boolean",
+        "ports_range": "string",
+        "sending_default_email_invites": "boolean",
+        "use_html_format_email": "boolean",
+        "dscp_marking": "boolean",
+        "dscp_audio": "integer",
+        "dscp_video": "integer",
+        "stereo_audio": "boolean",
+        "original_audio": "boolean",
+        "screen_sharing": "boolean",
+        "remote_control": "boolean",
+        "attention_tracking": "boolean"
+    },
+    "email_notification": {
+        "cloud_recording_avaliable_reminder": "boolean",
+        "jbh_reminder": "boolean",
+        "cancel_meeting_reminder": "boolean",
+        "low_host_count_reminder": "boolean",
+        "alternative_host_reminder": "boolean"
+    },
+    "zoom_rooms": {
+        "upcoming_meeting_alert": "boolean",
+        "start_airplay_manually": "boolean",
+        "weekly_system_restart": "boolean",
+        "list_meetings_with_calendar": "boolean",
+        "zr_post_meeting_feedback": "boolean",
+        "ultrasonic": "boolean",
+        "force_private_meeting": "boolean",
+        "hide_host_information": "boolean",
+        "cmr_for_instant_meeting": "boolean",
+        "auto_start_stop_scheduled_meetings": "boolean"
+    },
+    "security": {
+        "admin_change_name_pic": "boolean",
+        "import_photos_from_devices": "boolean",
+        "hide_billing_info": "boolean"
+    },
+    "recording": {
+        "local_recording": "boolean",
+        "cloud_recording": "boolean",
+        "record_speaker_view": "boolean",
+        "record_gallery_view": "boolean",
+        "record_audio_file": "boolean",
+        "save_chat_text": "boolean",
+        "show_timestamp": "boolean",
+        "recording_audio_transcript": "boolean",
+        "auto_recording": "string",
+        "cloud_recording_download": "boolean",
+        "cloud_recording_download_host": "boolean",
+        "account_user_access_recording": "boolean",
+        "auto_delete_cmr": "boolean",
+        "auto_delete_cmr_days": "integer"
+    },
+    "telephony": {
+        "third_party_audio": "boolean",
+        "audio_conference_info": "string"
+    },
+    "integration": {
+        "google_calendar": "boolean",
+        "google_drive": "boolean",
+        "dropbox": "boolean",
+        "box": "boolean",
+        "microsoft_one_drive": "boolean",
+        "kubi": "boolean"
+    },
+    "feature": {
+        "meeting_capacity": "integer"
+    }
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>204 No Content
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Path Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>accountId <strong>required</strong></td>
+<td>The account ID</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Body Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>schedule_meting.host_video <em>optional</em></td>
+<td>Start meetings with host video on</td>
+</tr>
+<tr>
+<td>schedule_meting.participant_video <em>optional</em></td>
+<td>Start meetings with participant video on. Participants can change this during the meeting.</td>
+</tr>
+<tr>
+<td>schedule_meting.audio_type <em>optional</em><div class="default">both</div></td>
+<td>Determine how participants can join the audio portion of the meeting<div class="enum"><code>both</code> Telephony and VoIP<br/><code>telephony</code> Audio PSTN telephony only<br/><code>voip</code> VoIP only<br/><code>thirdParty</code> 3rd party audio conference<br/></div></td>
+</tr>
+<tr>
+<td>schedule_meting.join_before_host <em>optional</em></td>
+<td>Allow participants to join the meeting before the host arrives</td>
+</tr>
+<tr>
+<td>schedule_meting.enforce_login <em>optional</em></td>
+<td>Only signed-in (Zoom users) users can join meetings</td>
+</tr>
+<tr>
+<td>schedule_meting.enforce_login_with_domains <em>optional</em></td>
+<td>Only signed-in users with a specific domain can join meetings</td>
+</tr>
+<tr>
+<td>schedule_meting.enforce_login_domains <em>optional</em></td>
+<td>Only signed-in users with a specified domains</td>
+</tr>
+<tr>
+<td>schedule_meting.not_store_meeting_topic <em>optional</em></td>
+<td>Always display &quot;Zoom Meeting&quot; as the meeting topic</td>
+</tr>
+<tr>
+<td>schedule_meting.force_pmi_jbh_password <em>optional</em></td>
+<td>Require a password for Personal Meetings if attendees can join before host</td>
+</tr>
+<tr>
+<td>in_meeting.e2e_encryption <em>optional</em></td>
+<td>Require that all meetings are encrypted using AES</td>
+</tr>
+<tr>
+<td>in_meeting.chat <em>optional</em></td>
+<td>Allow meeting participants to send a message visible to all participants</td>
+</tr>
+<tr>
+<td>in_meeting.private_chat <em>optional</em></td>
+<td>Allow meeting participants to send a private 1:1 message to another participants</td>
+</tr>
+<tr>
+<td>in_meeting.auto_saving_chat <em>optional</em></td>
+<td>Automatically save all in-meeting chats so that hosts do not need to manually save the text of the chat after the meeting starts</td>
+</tr>
+<tr>
+<td>in_meeting.file_transfer <em>optional</em></td>
+<td>Hosts and participants can send files through the in-meeting chat</td>
+</tr>
+<tr>
+<td>in_meeting.feedback <em>optional</em></td>
+<td>Add a Feedback tab to the Windows Settings or Mac Preferences dialog, and also enable users to provide feedback to Zoom at the end of the meeting</td>
+</tr>
+<tr>
+<td>in_meeting.post_meeting_feedback <em>optional</em></td>
+<td>Display a thumbs up/down survey at the end of each meeting</td>
+</tr>
+<tr>
+<td>in_meeting.co_host <em>optional</em></td>
+<td>Allow the host to add co-hosts</td>
+</tr>
+<tr>
+<td>in_meeting.polling <em>optional</em></td>
+<td>Add &#39;Polls&#39; to the meeting controls.</td>
+</tr>
+<tr>
+<td>in_meeting.attendee_on_hold <em>optional</em></td>
+<td>Allow hosts to temporarily remove an attendee from the meeting</td>
+</tr>
+<tr>
+<td>in_meeting.show_meeting_control_toolbar <em>optional</em></td>
+<td>Always show meeting control toolbar</td>
+</tr>
+<tr>
+<td>in_meeting.allow_show_zoom_windows <em>optional</em></td>
+<td>Show Zoom Desktop application when sharing screen</td>
+</tr>
+<tr>
+<td>in_meeting.annotation <em>optional</em></td>
+<td>Allow participants to use annotation tools to add information to shared screens</td>
+</tr>
+<tr>
+<td>in_meeting.whiteboard <em>optional</em></td>
+<td>Allow participants to share a whiteboard that includes annotation tools</td>
+</tr>
+<tr>
+<td>in_meeting.webinar_question_answer <em>optional</em></td>
+<td>Q&amp;A in webinar</td>
+</tr>
+<tr>
+<td>in_meeting.anonymous_question_answer <em>optional</em></td>
+<td>Allow Anonymous Q&amp;A in Webinar</td>
+</tr>
+<tr>
+<td>in_meeting.breakout_room <em>optional</em></td>
+<td>Allow host to split meeting participants into separate, smaller rooms</td>
+</tr>
+<tr>
+<td>in_meeting.closed_caption <em>optional</em></td>
+<td>Allow host to type closed captions or assign a participant/third party device to add closed captions</td>
+</tr>
+<tr>
+<td>in_meeting.far_end_camera_control <em>optional</em></td>
+<td>Allow another user to take control of your camera during a meeting</td>
+</tr>
+<tr>
+<td>in_meeting.group_hd <em>optional</em></td>
+<td>Activate higher quality video for host and participants. (This will use more bandwidth.)</td>
+</tr>
+<tr>
+<td>in_meeting.virtual_background <em>optional</em></td>
+<td>Allow users to replace their background with any selected image. Choose or upload an image in the Zoom Desktop application settings.</td>
+</tr>
+<tr>
+<td>in_meeting.watermark <em>optional</em></td>
+<td>Add watermark when viewing shared screen</td>
+</tr>
+<tr>
+<td>in_meeting.alert_guest_join <em>optional</em></td>
+<td>Identify guest participants in the meeting/webinar</td>
+</tr>
+<tr>
+<td>in_meeting.auto_answer <em>optional</em></td>
+<td>Enable users to see and add contacts to &#39;auto-answer group&#39; in the contact list on chat. Any call from members of this group will be automatically answered.</td>
+</tr>
+<tr>
+<td>in_meeting.p2p_connetion <em>optional</em></td>
+<td>Peer to Peer connection while only 2 people are in a meeting</td>
+</tr>
+<tr>
+<td>in_meeting.p2p_ports <em>optional</em></td>
+<td>P2P listening ports range</td>
+</tr>
+<tr>
+<td>in_meeting.ports_range <em>optional</em></td>
+<td>Listening ports range, separated by comma (ex 55,56). The ports range must be between 1 to 65535.</td>
+</tr>
+<tr>
+<td>in_meeting.sending_default_email_invites <em>optional</em></td>
+<td>Only show default email when sending email invites</td>
+</tr>
+<tr>
+<td>in_meeting.use_html_format_email <em>optional</em></td>
+<td>Use HTML format email for Outlook plugin</td>
+</tr>
+<tr>
+<td>in_meeting.dscp_marking <em>optional</em></td>
+<td>DSCP marking</td>
+</tr>
+<tr>
+<td>in_meeting.dscp_audio <em>optional</em><div class="minimum">1</div><div class="maximum">63</div></td>
+<td>DSCP Audio</td>
+</tr>
+<tr>
+<td>in_meeting.dscp_video <em>optional</em><div class="minimum">1</div><div class="maximum">63</div></td>
+<td>DSCP Video</td>
+</tr>
+<tr>
+<td>in_meeting.stereo_audio <em>optional</em></td>
+<td>Allow users to select stereo audio in their client settings</td>
+</tr>
+<tr>
+<td>in_meeting.original_audio <em>optional</em></td>
+<td>Allow users to select original sound in their client settings</td>
+</tr>
+<tr>
+<td>in_meeting.screen_sharing <em>optional</em></td>
+<td>Allow screen sharing</td>
+</tr>
+<tr>
+<td>in_meeting.remote_control <em>optional</em></td>
+<td>Allow users to request remote control</td>
+</tr>
+<tr>
+<td>in_meeting.attention_tracking <em>optional</em></td>
+<td>Lets the host see an indicator in the participant panel if a meeting/webinar attendee does not have Zoom in focus during screen sharing</td>
+</tr>
+<tr>
+<td>email_notification.cloud_recording_avaliable_reminder <em>optional</em></td>
+<td>Notify host when cloud recording is available</td>
+</tr>
+<tr>
+<td>email_notification.jbh_reminder <em>optional</em></td>
+<td>Notify host when participants join the meeting before them</td>
+</tr>
+<tr>
+<td>email_notification.cancel_meeting_reminder <em>optional</em></td>
+<td>Notify host and participants when the meeting is cancelled</td>
+</tr>
+<tr>
+<td>email_notification.low_host_count_reminder <em>optional</em></td>
+<td>Notify when host licenses are running low</td>
+</tr>
+<tr>
+<td>email_notification.alternative_host_reminder <em>optional</em></td>
+<td>Notify when an alternative host is set or removed from a meeting</td>
+</tr>
+<tr>
+<td>zoom_rooms.upcoming_meeting_alert <em>optional</em></td>
+<td>Upcoming meeting alert</td>
+</tr>
+<tr>
+<td>zoom_rooms.start_airplay_manually <em>optional</em></td>
+<td>Start AirPlay service manually</td>
+</tr>
+<tr>
+<td>zoom_rooms.weekly_system_restart <em>optional</em></td>
+<td>Weekly system restart</td>
+</tr>
+<tr>
+<td>zoom_rooms.list_meetings_with_calendar <em>optional</em></td>
+<td>Display meeting list with calendar integration</td>
+</tr>
+<tr>
+<td>zoom_rooms.zr_post_meeting_feedback <em>optional</em></td>
+<td>Zoom Room post meeting feedback</td>
+</tr>
+<tr>
+<td>zoom_rooms.ultrasonic <em>optional</em></td>
+<td>Automatic direct sharing using ultrasonic proximity signal</td>
+</tr>
+<tr>
+<td>zoom_rooms.force_private_meeting <em>optional</em></td>
+<td>Transform all meetings to private</td>
+</tr>
+<tr>
+<td>zoom_rooms.hide_host_information <em>optional</em></td>
+<td>Hide host and meeting ID from private meetings</td>
+</tr>
+<tr>
+<td>zoom_rooms.cmr_for_instant_meeting <em>optional</em></td>
+<td>Cloud recording for instant meetings</td>
+</tr>
+<tr>
+<td>zoom_rooms.auto_start_stop_scheduled_meetings <em>optional</em></td>
+<td>Automatic start/stop for scheduled meetings</td>
+</tr>
+<tr>
+<td>security.admin_change_name_pic <em>optional</em></td>
+<td>Only account administrators can change user&#39;s username and picture</td>
+</tr>
+<tr>
+<td>security.import_photos_from_devices <em>optional</em></td>
+<td>Allow importing of photos from photo library on the user&#39;s device</td>
+</tr>
+<tr>
+<td>security.hide_billing_info <em>optional</em></td>
+<td>Hide billing information</td>
+</tr>
+<tr>
+<td>recording.local_recording <em>optional</em></td>
+<td>Allow hosts and participants to record the meeting to a local file</td>
+</tr>
+<tr>
+<td>recording.cloud_recording <em>optional</em></td>
+<td>Allow hosts to record and save the meeting in the cloud</td>
+</tr>
+<tr>
+<td>recording.record_speaker_view <em>optional</em></td>
+<td>Record active speaker with shared screen</td>
+</tr>
+<tr>
+<td>recording.record_gallery_view <em>optional</em></td>
+<td>Record gallery view with shared screen</td>
+</tr>
+<tr>
+<td>recording.record_audio_file <em>optional</em></td>
+<td>Record an audio only file</td>
+</tr>
+<tr>
+<td>recording.save_chat_text <em>optional</em></td>
+<td>Save chat text from the meeting</td>
+</tr>
+<tr>
+<td>recording.show_timestamp <em>optional</em></td>
+<td>Add a timestamp to the recording</td>
+</tr>
+<tr>
+<td>recording.recording_audio_transcript <em>optional</em></td>
+<td>Automatically transcribe the audio of the meeting or webinar to the cloud</td>
+</tr>
+<tr>
+<td>recording.auto_recording <em>optional</em></td>
+<td>Record meetings automatically as they start<div class="enum"><code>local</code> Record on local<br/><code>cloud</code> Record on cloud<br/><code>none</code> Disabled<br/></div></td>
+</tr>
+<tr>
+<td>recording.cloud_recording_download <em>optional</em></td>
+<td>Cloud Recording Downloads</td>
+</tr>
+<tr>
+<td>recording.cloud_recording_download_host <em>optional</em></td>
+<td>Only the host can download cloud recordings</td>
+</tr>
+<tr>
+<td>recording.account_user_access_recording <em>optional</em></td>
+<td>Cloud recordings are only accessible to account members. People outside of your organization cannot open links that provide access to cloud recordings.</td>
+</tr>
+<tr>
+<td>recording.auto_delete_cmr <em>optional</em></td>
+<td>Allow Zoom to automatically delete recordings permanently after a specified number of days</td>
+</tr>
+<tr>
+<td>recording.auto_delete_cmr_days <em>optional</em></td>
+<td>When <code>auto_delete_cmr</code> is &#39;true&#39; this value will set the number of days before auto deletion of cloud recordings</td>
+</tr>
+<tr>
+<td>telephony.third_party_audio <em>optional</em></td>
+<td>Users can join the meeting using the existing 3rd party audio configuration</td>
+</tr>
+<tr>
+<td>telephony.audio_conference_info <em>optional</em></td>
+<td>3rd party audio conference info</td>
+</tr>
+<tr>
+<td>integration.google_calendar <em>optional</em></td>
+<td>Enables meetings to be scheduled using Google Calendars</td>
+</tr>
+<tr>
+<td>integration.google_drive <em>optional</em></td>
+<td>Enables users who join a meeting from their mobile device to share content from their Google Drive</td>
+</tr>
+<tr>
+<td>integration.dropbox <em>optional</em></td>
+<td>Enables users who join a meeting from their mobile device to share content from their Dropbox account</td>
+</tr>
+<tr>
+<td>integration.box <em>optional</em></td>
+<td>Enables users who join a meeting from their mobile device to share content from their Box account</td>
+</tr>
+<tr>
+<td>integration.microsoft_one_drive <em>optional</em></td>
+<td>Enables users who join a meeting from their mobile device to share content from their Microsoft OneDrive account</td>
+</tr>
+<tr>
+<td>integration.kubi <em>optional</em></td>
+<td>Enables users to control a connected Kubi device from within a Zoom meeting</td>
+</tr>
+<tr>
+<td>feature.meeting_capacity <em>optional</em><div class="default">100</div></td>
+<td>Set the maximum number of participants this user can have in a single meeting</td>
+</tr>
+</tbody></table>

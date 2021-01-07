@@ -1,0 +1,84 @@
+<h2 id='update-a-user'>Update a user</h2>
+<p>Update a user on your account</p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>PATCH https://api.zoom.us/v2/users/<span class="o">{</span>userId<span class="o">}</span>
+</code></pre></div>
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.zoom.us/v2/users/<span class="o">{</span>userId<span class="o">}</span> <span class="se">\</span>
+   <span class="nt">-d</span> <span class="s1">'{
+    "first_name": "string",
+    "last_name": "string",
+    "type": "integer",
+    "pmi": "string",
+    "timezone": "string [date-time]",
+    "dept": "string",
+    "vanity_name": "string",
+    "host_key": "string",
+    "cms_user_id": "string"
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>204 No Content
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Path Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId <strong>required</strong></td>
+<td>The user ID or email address</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Body Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>first_name <em>optional</em><div class="maxLength">64</div></td>
+<td>User&#39;s first name. Cannot contain more than 5 Chinese words.</td>
+</tr>
+<tr>
+<td>last_name <em>optional</em><div class="maxLength">64</div></td>
+<td>User&#39;s last name. Cannot contain more than 5 Chinese words.</td>
+</tr>
+<tr>
+<td>type <em>optional</em></td>
+<td>User&#39;s type<div class="enum"><code>1</code> basic<br/><code>2</code> pro<br/><code>3</code> corp<br/></div></td>
+</tr>
+<tr>
+<td>pmi <em>optional</em><div class="maxLength">10</div></td>
+<td>Personal Meeting ID,length must be 10</td>
+</tr>
+<tr>
+<td>timezone <em>optional</em></td>
+<td>The time zone id for user profile. For this parameter value please refer to the id value in <a href="#timezones">timezone</a> list.</td>
+</tr>
+<tr>
+<td>dept <em>optional</em></td>
+<td>Department for user profile, use for report</td>
+</tr>
+<tr>
+<td>vanity_name <em>optional</em></td>
+<td>Personal meeting room name</td>
+</tr>
+<tr>
+<td>host_key <em>optional</em><div class="maxLength">6</div></td>
+<td>Host Key, should be 6-digit number</td>
+</tr>
+<tr>
+<td>cms_user_id <em>optional</em></td>
+<td>Kaltura User Id</td>
+</tr>
+</tbody></table>

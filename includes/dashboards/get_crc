@@ -1,0 +1,49 @@
+<h2 id='retrieve-crc-port-usage'>Retrieve CRC Port Usage</h2>
+<p>Get CRC Port usage hour by hour for a specified time period <aside class='notice'>We will report a maximum of one month. For example, if &quot;from&quot; is set to &quot;2017-08-05&quot; and &quot;to&quot; is &quot;2017-10-10&quot; we will adjust &quot;from&quot; to &quot;2017-09-10&quot;</aside>.</p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>GET https://api.zoom.us/v2/metrics/crc
+</code></pre></div>
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.zoom.us/v2/metrics/crc?from<span class="o">=</span>string&amp;to<span class="o">=</span>string
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>200 OK
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string [date]"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string [date]"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"crc_ports_usage"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"date_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"crc_ports_hour_usage"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"hour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"max_usage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"total_usage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Query Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>from <strong>required</strong></td>
+<td>Start Date</td>
+</tr>
+<tr>
+<td>to <strong>required</strong></td>
+<td>End Date</td>
+</tr>
+</tbody></table>

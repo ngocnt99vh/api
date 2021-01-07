@@ -1,0 +1,44 @@
+<h2 id='retrieve-a-user-39-s-token'>Retrieve a user&#39;s token</h2>
+<p>Retrieve a user&#39;s token</p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>GET https://api.zoom.us/v2/users/<span class="o">{</span>userId<span class="o">}</span>/token
+</code></pre></div>
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.zoom.us/v2/users/<span class="o">{</span>userId<span class="o">}</span>/token
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>200 OK
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Path Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId <strong>required</strong></td>
+<td>The user ID or email address</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Query Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type <em>optional</em></td>
+<td>User token type<div class="enum"><code>token</code> Used for starting meeting with client SDK.<br/><code>zpk</code> Used for generating the start meeting url. (Deprecated)<br/><code>zak</code> Used for generating the start meeting url. The expiration time is two hours. For API users, the expiration time is 90 days.<br/></div></td>
+</tr>
+</tbody></table>

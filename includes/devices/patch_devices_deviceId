@@ -1,0 +1,59 @@
+<h2 id='update-a-h-323-sip-device'>Update a H.323/SIP Device</h2>
+<p>Update a H.323/SIP Device on your Zoom account</p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>PATCH https://api.zoom.us/v2/h323/devices/<span class="o">{</span>deviceId<span class="o">}</span>
+</code></pre></div>
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.zoom.us/v2/h323/devices/<span class="o">{</span>deviceId<span class="o">}</span> <span class="se">\</span>
+   <span class="nt">-d</span> <span class="s1">'{
+    "name": "string",
+    "protocol": "string",
+    "ip": "string",
+    "encryption": "string"
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>204 No Content
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Path Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>deviceId <strong>required</strong></td>
+<td>The device ID</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Body Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name <strong>required</strong><div class="maxLength">64</div></td>
+<td>Device name</td>
+</tr>
+<tr>
+<td>protocol <strong>required</strong></td>
+<td>Device protocol<div class="enum"><code>H.323</code> H.323<br/><code>SIP</code> SIP<br/></div></td>
+</tr>
+<tr>
+<td>ip <strong>required</strong></td>
+<td>Device Ip</td>
+</tr>
+<tr>
+<td>encryption <strong>required</strong></td>
+<td>Device encryption<div class="enum"><code>auto</code> auto<br/><code>yes</code> yes<br/><code>no</code> no<br/></div></td>
+</tr>
+</tbody></table>

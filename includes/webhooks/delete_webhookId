@@ -1,0 +1,30 @@
+<h2 id='delete-a-webhook'>Delete a webhook</h2>
+<p>Delete a webhook</p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>DELETE https://api.zoom.us/v2/webhooks/<span class="o">{</span>webhookId<span class="o">}</span>
+</code></pre></div>
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.zoom.us/v2/webhooks/<span class="o">{</span>webhookId<span class="o">}</span> <span class="se">\</span>
+    <span class="nt">-X</span> DELETE
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>204 No Content
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Path Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>webhookId <strong>required</strong></td>
+<td>The webhook ID</td>
+</tr>
+</tbody></table>

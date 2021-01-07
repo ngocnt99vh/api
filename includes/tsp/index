@@ -1,0 +1,45 @@
+<h1 id='tsp'>TSP</h1><h2 id='the-tsp-object'>The TSP object</h2>
+<p>List of TSP Accounts</p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"conference_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"leader_pin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dial_in_numbers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>conference_code <em>string</em></td>
+<td>Conference code, numeric value, length is less than 16.</td>
+</tr>
+<tr>
+<td>leader_pin <em>string</em></td>
+<td>Leader PIN, numeric value, length is less than 16.</td>
+</tr>
+<tr>
+<td>dial_in_numbers <em>array</em></td>
+<td>List of Dial In Numbers</td>
+</tr>
+<tr>
+<td>dial_in_numbers[0].code <strong>required</strong><div class="maxLength">6</div></td>
+<td>Country Code</td>
+</tr>
+<tr>
+<td>dial_in_numbers[0].number <strong>required</strong><div class="maxLength">16</div></td>
+<td>Dial-in number, length is less than 16.</td>
+</tr>
+<tr>
+<td>dial_in_numbers[0].type <em>optional</em></td>
+<td>Number type<div class="enum"><code>toll</code> Toll number<br/><code>tollfree</code> Toll free number<br/></div></td>
+</tr>
+</tbody></table>

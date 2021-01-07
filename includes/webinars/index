@@ -1,0 +1,161 @@
+<h1 id='webinars'>Webinars</h1><h2 id='the-webinar-object'>The Webinar object</h2>
+<p>Webinar object</p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"topic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string [date-time]"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"duration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"agenda"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"recurrence"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"repeat_interval"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"weekly_days"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"monthly_day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"monthly_week"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"monthly_week_day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"end_times"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"end_date_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string [date-time]"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"host_video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"panelists_video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"practice_session"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hd_video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"approval_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"registration_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"audio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"auto_recording"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"enforce_login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"enforce_login_domains"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"alternative_hosts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"close_registration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"show_share_button"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"allow_multiple_devices"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>topic <em>string</em></td>
+<td>Webinar topic</td>
+</tr>
+<tr>
+<td>type <em>integer</em></td>
+<td>Webinar Type<div class="enum"><code>5</code> Webinar<br/><code>6</code> Recurring Webinar with no fixed time<br/><code>9</code> Recurring Webinar with fixed time<br/></div></td>
+</tr>
+<tr>
+<td>start_time <em>string</em></td>
+<td>Webinar start time, in the format &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;&quot;, should be GMT time. In the format &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ss&quot;, should be local time, need to specify the time zone. Only used for scheduled webinar and recurring webinar with fixed time.</td>
+</tr>
+<tr>
+<td>duration <em>integer</em></td>
+<td>Webinar duration (minutes). Used for scheduled webinar only</td>
+</tr>
+<tr>
+<td>timezone <em>string</em></td>
+<td>Timezone to format start_time. For example, &quot;America/Los_Angeles&quot;. For scheduled meetings only. Please reference our <a href="#timezones">timezone</a> list for supported timezones and their formats.</td>
+</tr>
+<tr>
+<td>password <em>string</em></td>
+<td>Webinar password. Password may only contain the following characters: [a-z A-Z 0-9 @ - _ *]. Max of 10 characters.</td>
+</tr>
+<tr>
+<td>agenda <em>string</em></td>
+<td>Webinar description</td>
+</tr>
+<tr>
+<td>recurrence.type <em>integer</em></td>
+<td>Recurrence meeting type<div class="enum"><code>1</code> Daily<br/><code>2</code> Weekly<br/><code>3</code> Monthly<br/></div></td>
+</tr>
+<tr>
+<td>recurrence.repeat_interval <em>integer</em></td>
+<td>At which interval should the meeting repeat? For a daily meeting, max of 90 days. For a weekly meeting, max of 12 weeks. For a monthly meeting, max of 3 months.</td>
+</tr>
+<tr>
+<td>recurrence.weekly_days <em>integer</em></td>
+<td>Days of the week the meeting should repeat, multiple values separated by comma<div class="enum"><code>1</code> Sunday<br/><code>2</code> Monday<br/><code>3</code> Tuesday<br/><code>4</code> Wednesday<br/><code>5</code> Thursday<br/><code>6</code> Friday<br/><code>7</code> Saturday<br/></div></td>
+</tr>
+<tr>
+<td>recurrence.monthly_day <em>integer</em></td>
+<td>Day of the month for the meeting to be scheduled. The value range is from 1 to 31.</td>
+</tr>
+<tr>
+<td>recurrence.monthly_week <em>integer</em></td>
+<td>Week for which the meeting should recur each month,<div class="enum"><code>-1</code> Last week<br/><code>1</code> First week<br/><code>2</code> Second week<br/><code>3</code> Third week<br/><code>4</code> Fourth week<br/></div></td>
+</tr>
+<tr>
+<td>recurrence.monthly_week_day <em>integer</em></td>
+<td>Day for which the meeting should recur each month<div class="enum"><code>1</code> Sunday<br/><code>2</code> Monday<br/><code>3</code> Tuesday<br/><code>4</code> Wednesday<br/><code>5</code> Thursday<br/><code>6</code> Friday<br/><code>7</code> Saturday<br/></div></td>
+</tr>
+<tr>
+<td>recurrence.end_times <em>integer</em></td>
+<td>Select how many times the meeting will occur before it is canceled. (Cannot be used with &quot;end_date_time&quot;.)</td>
+</tr>
+<tr>
+<td>recurrence.end_date_time <em>string</em></td>
+<td>Select a date the meeting will occur before it is canceled.. Should be UTC time, such as 2017-11-25T12:00:00Z. (Cannot be used with &quot;end_times&quot;.)</td>
+</tr>
+<tr>
+<td>settings.host_video <em>boolean</em></td>
+<td>Start video when host joins webinar</td>
+</tr>
+<tr>
+<td>settings.panelists_video <em>boolean</em></td>
+<td>Start video when panelists join webinar</td>
+</tr>
+<tr>
+<td>settings.practice_session <em>boolean</em></td>
+<td>Enable Practice Session</td>
+</tr>
+<tr>
+<td>settings.hd_video <em>boolean</em></td>
+<td>Default to HD Video</td>
+</tr>
+<tr>
+<td>settings.approval_type <em>integer</em></td>
+<td><div class="enum"><code>0</code> Automatically Approve<br/><code>1</code> Manually Approve<br/><code>2</code> No Registration Required<br/></div></td>
+</tr>
+<tr>
+<td>settings.registration_type <em>integer</em></td>
+<td>Registration type. Used for recurring webinar with fixed time only.<div class="enum"><code>1</code> Attendees register once and can attend any of the occurrences<br/><code>2</code> Attendees need to register for each occurrence to attend<br/><code>3</code> Attendees register once and can choose one or more occurrences to attend<br/></div></td>
+</tr>
+<tr>
+<td>settings.audio <em>string</em></td>
+<td>Determine how participants can join the audio portion of the meeting<div class="enum"><code>both</code> Both Telephony and VoIP<br/><code>telephony</code> Telephony only<br/><code>voip</code> VoIP only<br/></div></td>
+</tr>
+<tr>
+<td>settings.auto_recording <em>string</em></td>
+<td><div class="enum"><code>local</code> Record to local device<br/><code>cloud</code> Record to cloud<br/><code>none</code> No Recording<br/></div></td>
+</tr>
+<tr>
+<td>settings.enforce_login <em>boolean</em></td>
+<td>Only signed-in users can join this meeting</td>
+</tr>
+<tr>
+<td>settings.enforce_login_domains <em>string</em></td>
+<td>Only signed-in users with specified domains can join meetings</td>
+</tr>
+<tr>
+<td>settings.alternative_hosts <em>string</em></td>
+<td>Alternative hosts emails or IDs. Multiple values separated by comma.</td>
+</tr>
+<tr>
+<td>settings.close_registration <em>boolean</em></td>
+<td>Close registration after event date</td>
+</tr>
+<tr>
+<td>settings.show_share_button <em>boolean</em></td>
+<td>Show social share buttons on registration page</td>
+</tr>
+<tr>
+<td>settings.allow_multiple_devices <em>boolean</em></td>
+<td>Allow attendees to join from multiple devices</td>
+</tr>
+</tbody></table>

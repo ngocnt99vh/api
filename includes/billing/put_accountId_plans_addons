@@ -1,0 +1,49 @@
+<h2 id='update-an-additional-plan-for-sub-account'>Update an additional plan for sub account</h2>
+<p>Update an additional plan for sub account<aside>Can only update an Additional plan for the sub account which is a paid account and paid by master account</aside></p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>PUT https://api.zoom.us/v2/accounts/<span class="o">{</span>accountId<span class="o">}</span>/plans/addons
+</code></pre></div>
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.zoom.us/v2/accounts/<span class="o">{</span>accountId<span class="o">}</span>/plans/addons <span class="se">\</span>
+   <span class="nt">-d</span> <span class="s1">'{
+    "type": "string",
+    "hosts": "integer"
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>204 No Content
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Path Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>accountId <strong>required</strong></td>
+<td>The account ID</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Body Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type <strong>required</strong></td>
+<td>Account <a href="#plans">plan type</a></td>
+</tr>
+<tr>
+<td>hosts <strong>required</strong></td>
+<td>Account plan number of hosts</td>
+</tr>
+</tbody></table>

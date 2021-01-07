@@ -1,0 +1,234 @@
+<h2 id='create-a-meeting'>Create a meeting</h2>
+<p>Create a meeting for a user <aside>The expiration time of start_url is two hours. But for API users, the expiration time is 90 days.</aside></p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v2/users/<span class="o">{</span>userId<span class="o">}</span>/meetings
+</code></pre></div>
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.zoom.us/v2/users/<span class="o">{</span>userId<span class="o">}</span>/meetings <span class="se">\</span>
+   <span class="nt">-d</span> <span class="s1">'{
+    "topic": "string",
+    "type": "integer",
+    "start_time": "string [date-time]",
+    "duration": "integer",
+    "timezone": "string",
+    "password": "string",
+    "agenda": "string",
+    "recurrence": {
+        "type": "integer",
+        "repeat_interval": "integer",
+        "weekly_days": "integer",
+        "monthly_day": "integer",
+        "monthly_week": "integer",
+        "monthly_week_day": "integer",
+        "end_times": "integer",
+        "end_date_time": "string [date-time]"
+    },
+    "settings": {
+        "host_video": "boolean",
+        "participant_video": "boolean",
+        "cn_meeting": "boolean",
+        "in_meeting": "boolean",
+        "join_before_host": "boolean",
+        "mute_upon_entry": "boolean",
+        "watermark": "boolean",
+        "use_pmi": "boolean",
+        "approval_type": "integer",
+        "registration_type": "integer",
+        "audio": "string",
+        "auto_recording": "string",
+        "enforce_login": "boolean",
+        "enforce_login_domains": "string",
+        "alternative_hosts": "string"
+    }
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>201 Created
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"host_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"topic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string [date-time]"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"duration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string [date-time]"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"agenda"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"start_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"join_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"h323_password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"occurrences"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"occurrence_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string [date-time]"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"duration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"host_video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"participant_video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"cn_meeting"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"in_meeting"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"join_before_host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mute_upon_entry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"watermark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"use_pmi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"approval_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"registration_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"audio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"auto_recording"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"enforce_login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"enforce_login_domains"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"alternative_hosts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Path Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId <strong>required</strong></td>
+<td>The user ID or email address</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Body Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>topic <em>optional</em></td>
+<td>Meeting topic</td>
+</tr>
+<tr>
+<td>type <em>optional</em><div class="default">2</div></td>
+<td>Meeting Type<div class="enum"><code>1</code> Instant Meeting<br/><code>2</code> Scheduled Meeting<br/><code>3</code> Recurring Meeting with no fixed time<br/><code>8</code> Recurring Meeting with fixed time<br/></div></td>
+</tr>
+<tr>
+<td>start_time <em>optional</em></td>
+<td>Meeting start time. When using a format like &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;&quot;, always use GMT time. When using a format like &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ss&quot;, you should use local time and you will need to specify the time zone. Only used for scheduled meetings and recurring meetings with fixed time.</td>
+</tr>
+<tr>
+<td>duration <em>optional</em></td>
+<td>Meeting duration (minutes). Used for scheduled meetings only</td>
+</tr>
+<tr>
+<td>timezone <em>optional</em></td>
+<td>Timezone to format start_time. For example, &quot;America/Los_Angeles&quot;. For scheduled meetings only. Please reference our <a href="#timezones">timezone</a> list for supported timezones and their formats.</td>
+</tr>
+<tr>
+<td>password <em>optional</em></td>
+<td>Password to join the meeting. Password may only contain the following characters: [a-z A-Z 0-9 @ - _ *]. Max of 10 characters.</td>
+</tr>
+<tr>
+<td>agenda <em>optional</em></td>
+<td>Meeting description</td>
+</tr>
+<tr>
+<td>recurrence.type <em>optional</em></td>
+<td>Recurrence meeting type<div class="enum"><code>1</code> Daily<br/><code>2</code> Weekly<br/><code>3</code> Monthly<br/></div></td>
+</tr>
+<tr>
+<td>recurrence.repeat_interval <em>optional</em></td>
+<td>At which interval should the meeting repeat? For a daily meeting, max of 90 days. For a weekly meeting, max of 12 weeks. For a monthly meeting, max of 3 months.</td>
+</tr>
+<tr>
+<td>recurrence.weekly_days <em>optional</em></td>
+<td>Days of the week the meeting should repeat, multiple values separated by comma<div class="enum"><code>1</code> Sunday<br/><code>2</code> Monday<br/><code>3</code> Tuesday<br/><code>4</code> Wednesday<br/><code>5</code> Thursday<br/><code>6</code> Friday<br/><code>7</code> Saturday<br/></div></td>
+</tr>
+<tr>
+<td>recurrence.monthly_day <em>optional</em></td>
+<td>Day of the month for the meeting to be scheduled. The value range is from 1 to 31.</td>
+</tr>
+<tr>
+<td>recurrence.monthly_week <em>optional</em></td>
+<td>Week for which the meeting should recur each month,<div class="enum"><code>-1</code> Last week<br/><code>1</code> First week<br/><code>2</code> Second week<br/><code>3</code> Third week<br/><code>4</code> Fourth week<br/></div></td>
+</tr>
+<tr>
+<td>recurrence.monthly_week_day <em>optional</em></td>
+<td>Day for which the meeting should recur each month<div class="enum"><code>1</code> Sunday<br/><code>2</code> Monday<br/><code>3</code> Tuesday<br/><code>4</code> Wednesday<br/><code>5</code> Thursday<br/><code>6</code> Friday<br/><code>7</code> Saturday<br/></div></td>
+</tr>
+<tr>
+<td>recurrence.end_times <em>optional</em><div class="default">1</div><div class="maximum">50</div></td>
+<td>Select how many times the meeting will occur before it is canceled. (Cannot be used with &quot;end_date_time&quot;.)</td>
+</tr>
+<tr>
+<td>recurrence.end_date_time <em>optional</em></td>
+<td>Select a date the meeting will occur before it is canceled.. Should be UTC time, such as 2017-11-25T12:00:00Z. (Cannot be used with &quot;end_times&quot;.)</td>
+</tr>
+<tr>
+<td>settings.host_video <em>optional</em></td>
+<td>Start video when host joins meeting</td>
+</tr>
+<tr>
+<td>settings.participant_video <em>optional</em></td>
+<td>Start video when participants join meeting</td>
+</tr>
+<tr>
+<td>settings.cn_meeting <em>optional</em><div class="default">false</div></td>
+<td>Host meeting in China</td>
+</tr>
+<tr>
+<td>settings.in_meeting <em>optional</em><div class="default">false</div></td>
+<td>Host meeting in India</td>
+</tr>
+<tr>
+<td>settings.join_before_host <em>optional</em><div class="default">false</div></td>
+<td>Allow participants to join the meeting before the host starts the meeting. Only used for scheduled or recurring meetings.</td>
+</tr>
+<tr>
+<td>settings.mute_upon_entry <em>optional</em><div class="default">false</div></td>
+<td>Mute participants upon entry</td>
+</tr>
+<tr>
+<td>settings.watermark <em>optional</em><div class="default">false</div></td>
+<td>Add watermark when viewing shared screen</td>
+</tr>
+<tr>
+<td>settings.use_pmi <em>optional</em><div class="default">false</div></td>
+<td>Use Personal Meeting ID. Only used for scheduled meetings and recurring meetings with no fixed time.</td>
+</tr>
+<tr>
+<td>settings.approval_type <em>optional</em><div class="default">2</div></td>
+<td><div class="enum"><code>0</code> Automatically Approve<br/><code>1</code> Manually Approve<br/><code>2</code> No Registration Required<br/></div></td>
+</tr>
+<tr>
+<td>settings.registration_type <em>optional</em><div class="default">1</div></td>
+<td>Registration type. Used for recurring meeting with fixed time only.<div class="enum"><code>1</code> Attendees register once and can attend any of the occurrences<br/><code>2</code> Attendees need to register for each occurrence to attend<br/><code>3</code> Attendees register once and can choose one or more occurrences to attend<br/></div></td>
+</tr>
+<tr>
+<td>settings.audio <em>optional</em><div class="default">both</div></td>
+<td>Determine how participants can join the audio portion of the meeting<div class="enum"><code>both</code> Both Telephony and VoIP<br/><code>telephony</code> Telephony only<br/><code>voip</code> VoIP only<br/></div></td>
+</tr>
+<tr>
+<td>settings.auto_recording <em>optional</em><div class="default">none</div></td>
+<td><div class="enum"><code>local</code> Record to local device<br/><code>cloud</code> Record to cloud<br/><code>none</code> No Recording<br/></div></td>
+</tr>
+<tr>
+<td>settings.enforce_login <em>optional</em></td>
+<td>Only signed-in users can join this meeting</td>
+</tr>
+<tr>
+<td>settings.enforce_login_domains <em>optional</em></td>
+<td>Only signed-in users with specified domains can join meetings</td>
+</tr>
+<tr>
+<td>settings.alternative_hosts <em>optional</em></td>
+<td>Alternative hosts emails or IDs. Multiple value separated by comma.</td>
+</tr>
+</tbody></table>

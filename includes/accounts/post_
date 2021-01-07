@@ -1,0 +1,80 @@
+<h2 id='create-a-sub-account'>Create a sub account</h2>
+<p>Create a sub account under the master account. <aside>Your account must be a master account and have this privilege to create sub account. Zoom only assigns this privilege to trusted partners. The created user will not receive a confirmation email.</aside>.</p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v2/accounts
+</code></pre></div>
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.zoom.us/v2/accounts <span class="se">\</span>
+   <span class="nt">-d</span> <span class="s1">'{
+    "first_name": "string",
+    "last_name": "string",
+    "email": "string",
+    "password": "string",
+    "options": {
+        "share_rc": "boolean",
+        "room_connectors": "string",
+        "share_mc": "boolean",
+        "meeting_connectors": "string",
+        "pay_mode": "string"
+    }
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>201 Created
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"owner_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"owner_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Body Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>first_name <strong>required</strong></td>
+<td>User&#39;s first name</td>
+</tr>
+<tr>
+<td>last_name <strong>required</strong></td>
+<td>User&#39;s last name</td>
+</tr>
+<tr>
+<td>email <strong>required</strong></td>
+<td>User&#39;s email address</td>
+</tr>
+<tr>
+<td>password <strong>required</strong></td>
+<td>User&#39;s password</td>
+</tr>
+<tr>
+<td>options.share_rc <em>optional</em><div class="default">false</div></td>
+<td>Enable Share Virtual Room Connector</td>
+</tr>
+<tr>
+<td>options.room_connectors <em>optional</em></td>
+<td>Virtual Room Connector, multiple value separated by comma</td>
+</tr>
+<tr>
+<td>options.share_mc <em>optional</em><div class="default">false</div></td>
+<td>Enable Share Meeting Connector</td>
+</tr>
+<tr>
+<td>options.meeting_connectors <em>optional</em></td>
+<td>Meeting Connector, multiple values separated by comma</td>
+</tr>
+<tr>
+<td>options.pay_mode <em>optional</em><div class="default">master</div></td>
+<td>Payee<div class="enum"><code>master</code> Master account holder pays<br/><code>sub</code> Sub account holder pays<br/></div></td>
+</tr>
+</tbody></table>

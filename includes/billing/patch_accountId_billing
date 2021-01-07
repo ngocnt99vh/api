@@ -1,0 +1,89 @@
+<h2 id='update-billing-information-for-a-sub-account'>Update billing information for a sub account</h2>
+<p>Update billing information for a sub account under the master account <aside>Only for the sub account which is a paid account and paid by master account</aside></p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>PATCH https://api.zoom.us/v2/accounts/<span class="o">{</span>accountId<span class="o">}</span>/billing
+</code></pre></div>
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.zoom.us/v2/accounts/<span class="o">{</span>accountId<span class="o">}</span>/billing <span class="se">\</span>
+   <span class="nt">-d</span> <span class="s1">'{
+    "first_name": "string",
+    "last_name": "string",
+    "email": "string",
+    "phone_number": "string",
+    "address": "string",
+    "apt": "string",
+    "city": "string",
+    "state": "string",
+    "zip": "string",
+    "country": "string"
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>204 No Content
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Path Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>accountId <strong>required</strong></td>
+<td>The account ID</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Body Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>first_name <em>optional</em></td>
+<td>Billing Contact&#39;s first name</td>
+</tr>
+<tr>
+<td>last_name <em>optional</em></td>
+<td>Billing Contact&#39;s last name</td>
+</tr>
+<tr>
+<td>email <em>optional</em></td>
+<td>Billing Contact&#39;s email address</td>
+</tr>
+<tr>
+<td>phone_number <em>optional</em></td>
+<td>Billing Contact&#39;s phone number</td>
+</tr>
+<tr>
+<td>address <em>optional</em></td>
+<td>Billing Contact&#39;s address</td>
+</tr>
+<tr>
+<td>apt <em>optional</em></td>
+<td>Billing Contact&#39;s apartment/suite</td>
+</tr>
+<tr>
+<td>city <em>optional</em></td>
+<td>Billing Contact&#39;s city</td>
+</tr>
+<tr>
+<td>state <em>optional</em></td>
+<td>Billing Contact&#39;s state</td>
+</tr>
+<tr>
+<td>zip <em>optional</em></td>
+<td>Billing Contact&#39;s zip/postal code</td>
+</tr>
+<tr>
+<td>country <em>optional</em></td>
+<td>Billing Contact&#39;s country</td>
+</tr>
+</tbody></table>

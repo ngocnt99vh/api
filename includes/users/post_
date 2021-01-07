@@ -1,0 +1,66 @@
+<h2 id='create-a-user'>Create a user</h2>
+<p>Create a user on your account</p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>POST https://api.zoom.us/v2/users
+</code></pre></div>
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.zoom.us/v2/users <span class="se">\</span>
+   <span class="nt">-d</span> <span class="s1">'{
+    "action": "string",
+    "user_info": {
+        "email": "string",
+        "type": "integer",
+        "first_name": "string",
+        "last_name": "string",
+        "password": "string"
+    }
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>201 Created
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Body Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>action <strong>required</strong></td>
+<td>Specify how to create the new user<div class="enum"><code>create</code> User will get an email sent from Zoom. There is a confirmation link in this email. User will then need to click this link to activate their account to the Zoom service. The user can set or change their password in Zoom. <br/>.<br/><code>autoCreate</code> This action is provided for enterprise customer who has a managed domain. This feature is disabled by default because of the security risk involved in creating a user who does not belong to your domain without notifying the user. <br/><br/><code>custCreate</code> This action is provided for API partner only. User created in this way has no password and is not able to log into the Zoom web site or client. <br/><br/><code>ssoCreate</code> This action is provided for enabled &quot;Pre-provisioning SSO User&quot; option. User created in this way has no password. If it is not a basic user, will generate a Personal Vanity URL using user name (no domain) of the provisioning email. If user name or pmi is invalid or occupied, will use random number/random personal vanity URL. <br/><br/></div></td>
+</tr>
+<tr>
+<td>user_info.email <strong>required</strong><div class="maxLength">128</div></td>
+<td>User&#39;s email address</td>
+</tr>
+<tr>
+<td>user_info.type <strong>required</strong></td>
+<td>User&#39;s type<div class="enum"><code>1</code> basic<br/><code>2</code> pro<br/><code>3</code> corp<br/></div></td>
+</tr>
+<tr>
+<td>user_info.first_name <em>optional</em><div class="maxLength">64</div></td>
+<td>User&#39;s first name. Cannot contain more than 5 Chinese words.</td>
+</tr>
+<tr>
+<td>user_info.last_name <em>optional</em><div class="maxLength">64</div></td>
+<td>User&#39;s last name. Cannot contain more than 5 Chinese words.</td>
+</tr>
+<tr>
+<td>user_info.password <em>optional</em></td>
+<td>User’s password. Only for &quot;autoCreate&quot; action.</td>
+</tr>
+</tbody></table>

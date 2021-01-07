@@ -1,0 +1,42 @@
+<h1 id='im-groups'>IM Groups</h1><h2 id='the-im-group-object'>The IM Group object</h2>
+<p>IM Group object</p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_members"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"search_by_domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"search_by_account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"search_by_ma_account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name <em>string</em></td>
+<td>Group name</td>
+</tr>
+<tr>
+<td>total_members <em>integer</em></td>
+<td>Total number of members in this group</td>
+</tr>
+<tr>
+<td>type <em>string</em></td>
+<td>IM Group type<div class="enum"><code>normal</code> Only members can see the group automatically. Other people can search members in the group.<br/><code>shared</code> All people in the account can see the group and members automatically<br/><code>restricted</code> Nobody can see the group or search members except the members in the group<br/></div></td>
+</tr>
+<tr>
+<td>search_by_domain <em>boolean</em></td>
+<td>Members can search others in the same email domain</td>
+</tr>
+<tr>
+<td>search_by_account <em>boolean</em></td>
+<td>Members can search others under same account</td>
+</tr>
+<tr>
+<td>search_by_ma_account <em>boolean</em></td>
+<td>Members can search others under same master account, including all sub accounts</td>
+</tr>
+</tbody></table>

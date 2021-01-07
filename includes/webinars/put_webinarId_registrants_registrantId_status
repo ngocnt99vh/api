@@ -1,0 +1,48 @@
+<h2 id='update-a-webinar-registrant-39-s-status'>Update a webinar registrant&#39;s status</h2>
+<p>Update a webinar registrant&#39;s status</p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>PUT https://api.zoom.us/v2/webinars/<span class="o">{</span>webinarId<span class="o">}</span>/registrants/<span class="o">{</span>registrantId<span class="o">}</span>/status
+</code></pre></div>
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.zoom.us/v2/webinars/<span class="o">{</span>webinarId<span class="o">}</span>/registrants/<span class="o">{</span>registrantId<span class="o">}</span>/status <span class="se">\</span>
+   <span class="nt">-d</span> <span class="s1">'{
+    "status": "string"
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>204 No Content
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Path Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>webinarId <strong>required</strong></td>
+<td>The webinar ID</td>
+</tr>
+<tr>
+<td>registrantId <strong>required</strong></td>
+<td>The registrant ID</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Body Arguments</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status <em>optional</em></td>
+<td><div class="enum"><code>pending</code> set registrant status to pending<br/><code>approved</code> set registrant status to approved<br/><code>denied</code> set registrant status to denied<br/></div></td>
+</tr>
+</tbody></table>
